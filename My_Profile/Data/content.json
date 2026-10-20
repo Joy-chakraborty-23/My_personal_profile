@@ -1,0 +1,425 @@
+{
+  "profile": {
+    "name": "Jyotirmoy Chakraborty",
+    "role": "MS by Research · Energy Sciences & Engineering",
+    "institution": "Indian Institute of Technology Guwahati",
+    "location": "Guwahati, India",
+    "email": "c.jyotirmoy@iitg.ac.in",
+    "headline": "Engineering intelligent, reliable and safe energy systems.",
+    "summary": "I am a research engineer working at the intersection of lithium-ion battery management, state estimation, physics-informed machine learning, and real-time systems. I build models and tools that connect sound physical reasoning with practical implementation.",
+    "linkedin": "https://www.linkedin.com/in/jyotirmoy-chakraborty-6a13b8192",
+    "github": "https://github.com/Joy-chakraborty-23",
+    "leetcode": "https://leetcode.com/u/JOY2354/",
+    "cv": "assets/Jyotirmoy_Chakraborty_Public_CV.pdf",
+    "last_updated": "20 October 2026"
+  },
+  "projects": [
+    {
+      "slug": "battery-digital-twin",
+      "title": "Safety-Gated Edge–Cloud Battery Digital Twin",
+      "subtitle": "Condition-aware cloud assistance without giving up local safety.",
+      "category": "Battery & energy",
+      "year": "2026–present",
+      "status": "Simulation and PIL-oriented work; CHIL planned",
+      "featured": true,
+      "visual": "twin",
+      "tags": [
+        "MATLAB/Simulink",
+        "EKF",
+        "PINN",
+        "OPAL-RT",
+        "TI C2000",
+        "Battery modelling"
+      ],
+      "source": "Scientific project report, October 2026; academic CV",
+      "repository": "",
+      "problem": "Continuous cloud communication is expensive and introduces latency. A battery manager still needs local estimation and protection when connectivity becomes unreliable.",
+      "role": "Developed the four-cell modelling approach, event-trigger logic, safety gate, estimator structure and embedded-oriented validation workflow.",
+      "method": "A four-cell equivalent-circuit and thermal plant feeds an edge BMS. Residuals, uncertainty and safety margins determine when the controller requests cloud help. Returned corrections are checked for physical consistency, confidence and freshness before use.",
+      "outcome": "Approximately 82.8% fewer edge-to-cloud communications relative to continuous communication in the tested PIL configuration.",
+      "limitation": "Physical Controller Hardware-in-the-Loop results have not yet been reported. Stability guarantees and cross-chemistry generalization remain open research directions.",
+      "future": "Perform OPAL-RT / physical TI C2000 closed-loop validation; quantify latency and overruns; investigate formal event-triggering and robust estimation guarantees.",
+      "source_note": "October 2026 project report, sections 1–16. Code repository is private and is not linked.",
+      "kpi": "82.8%",
+      "kpi_caption": "less cloud communication · tested PIL configuration"
+    },
+    {
+      "slug": "battery-ml-monitoring",
+      "title": "Battery ML Monitoring Platform",
+      "subtitle": "Observability for battery-health models after deployment.",
+      "category": "AI & machine learning",
+      "year": "2026",
+      "status": "Public repository",
+      "featured": true,
+      "visual": "monitor",
+      "tags": [
+        "Python",
+        "Drift detection",
+        "ML monitoring",
+        "Dash",
+        "ONNX"
+      ],
+      "source": "Public project GitHub README",
+      "repository": "https://github.com/Joy-chakraborty-23/Production-style-monitoring-and-deployment-framework-for-battery-health-ML-systems",
+      "problem": "Battery ML models can become less reliable after deployment as chemistry, temperature and degradation conditions change.",
+      "role": "Built a battery-oriented monitoring workflow with dataset handling, multi-model inference, drift and performance checks, alerting and export hooks.",
+      "method": "Dataset registry → preprocessing and model inference → drift / performance monitoring → alerts, reporting and potential retraining workflows.",
+      "outcome": "Repository documents an implemented monitoring stack with battery-focused demos and CLI tools; no independent field-performance metric is claimed here.",
+      "limitation": "Production fleet deployment and independently verified reliability statistics are not established by the available repository documentation.",
+      "future": "Validate on longer multi-chemistry ageing datasets and connect monitoring outputs to real edge deployments.",
+      "source_note": "GitHub README, reviewed October 2026."
+    },
+    {
+      "slug": "batterywise",
+      "title": "BatteryWise · Local Battery Analytics",
+      "subtitle": "Practical, privacy-conscious health insights from laptop telemetry.",
+      "category": "Software applications",
+      "year": "2026",
+      "status": "Working Windows local app",
+      "featured": true,
+      "visual": "batterywise",
+      "tags": [
+        "Python",
+        "FastAPI",
+        "SQLite",
+        "PyWebView",
+        "Telemetry"
+      ],
+      "source": "Academic CV; project repository README",
+      "repository": "https://github.com/Joy-chakraborty-23/BatteryWise-Local-App-Update",
+      "problem": "Battery percentage alone does not explain stress, charging patterns or longer-term behaviour.",
+      "role": "Built telemetry collection, event logging, local analytics and CSV exports. Developed a local-first desktop workflow.",
+      "method": "Laptop battery measurements → local FastAPI backend → SQLite storage → battery analytics and desktop dashboard → raw/daily CSV export.",
+      "outcome": "Windows local application and test/demo path are documented. CSV export supports later health and degradation analysis.",
+      "limitation": "The repository describes a Flutter client as a scaffold, not a completed production mobile app.",
+      "future": "Evaluate ageing indicators with longitudinal telemetry and extend the validated desktop experience.",
+      "source_note": "Academic CV (2026); public BatteryWise README (29 August 2026)."
+    },
+    {
+      "slug": "soc-ml",
+      "title": "Data-Driven Battery SOC Estimation",
+      "subtitle": "Comparing neural-network approaches to state-of-charge prediction.",
+      "category": "Battery & energy",
+      "year": "Research project",
+      "status": "Public repository",
+      "featured": true,
+      "visual": "soc",
+      "tags": [
+        "Python",
+        "FCN",
+        "CNN",
+        "LSTM",
+        "Optuna",
+        "Lithium-ion"
+      ],
+      "source": "Public GitHub README",
+      "repository": "https://github.com/Joy-chakraborty-23/Battery-State-of-Charge-Estimation",
+      "problem": "SOC cannot be directly measured and must be inferred from available battery signals.",
+      "role": "Developed a modelling and evaluation workflow to compare FCN, CNN and LSTM approaches, including data processing and hyperparameter optimization.",
+      "method": "LG HG2 battery measurements → time-series preprocessing → neural models → Optuna tuning → MSE/MAE evaluation and prediction plots.",
+      "outcome": "Reproducible workflow and code documented in the repository; this website does not state a single best score without a validated summary.",
+      "limitation": "Generalization across chemistry, temperature and hardware deployment is not demonstrated by the README alone.",
+      "future": "Explore physical constraints and uncertainty estimates for transfer across operating conditions.",
+      "source_note": "Public GitHub README; data credited to Kollmeyer et al., Mendeley Data (2020)."
+    },
+    {
+      "slug": "nexus-p2p",
+      "title": "NEXUS P2P Workspace",
+      "subtitle": "A local-first approach to device discovery and encrypted collaboration.",
+      "category": "Software applications",
+      "year": "2024",
+      "status": "CV-documented project",
+      "featured": false,
+      "visual": "nexus",
+      "tags": [
+        "Electron",
+        "Node.js",
+        "Capacitor",
+        "UDP",
+        "AES-256-GCM"
+      ],
+      "source": "Academic CV",
+      "repository": "",
+      "problem": "Device-to-device collaboration can be cumbersome when it depends on manual setup or a central service.",
+      "role": "Engineered local peer discovery, encrypted messaging and clipboard synchronization, and reactive UI state synchronization.",
+      "method": "UDP discovery and subnet scanning → encrypted communication using secp256k1 and AES-256-GCM → Server-Sent Events and Node.js streams for UI updates and transfers.",
+      "outcome": "Implemented a local-first workspace described in the CV; no benchmarked throughput figure is given.",
+      "limitation": "A public repository matching this exact 2024 P2P project was not conclusively verified; no code link is provided.",
+      "future": "Document interoperability, threat modelling and large-file transfer performance.",
+      "source_note": "Academic CV, project entry for 2024."
+    },
+    {
+      "slug": "computer-vision-monitor",
+      "title": "Real-Time Social Distance Monitoring",
+      "subtitle": "Computer vision and geometry for real-world distance assessment.",
+      "category": "Computer vision",
+      "year": "2022–2023",
+      "status": "Undergraduate capstone",
+      "featured": false,
+      "visual": "vision",
+      "tags": [
+        "YOLOv5",
+        "OpenCV",
+        "Python",
+        "Jetson Nano"
+      ],
+      "source": "Academic CV; project GitHub README",
+      "repository": "https://github.com/Joy-chakraborty-23/Realtime-Social-Distance-Monitoring-For-YOLO-V5",
+      "problem": "Monitoring spacing in crowded scenes requires identifying people and correcting perspective distortion.",
+      "role": "Built person detection, perspective calibration and a custom 3D-printed camera mounting setup.",
+      "method": "YOLOv5 detections → perspective transform → physical-distance estimation → visual risk indication.",
+      "outcome": "CV reports 89% detection accuracy in crowded indoor environments and 60% lower hardware cost from a custom mount; experimental protocols are not available in the supplied files.",
+      "limitation": "Accuracy and cost figures are CV-reported rather than independently reproduced in this portfolio.",
+      "future": "Evaluate domain shift, camera calibration robustness and privacy-preserving inference.",
+      "source_note": "CV, June 2022–March 2023; public YOLOv5 repository."
+    },
+    {
+      "slug": "battery-health-dashboard",
+      "title": "Battery Health Intelligence Dashboard",
+      "subtitle": "From sensor streams to understandable risk and model-health reports.",
+      "category": "Software applications",
+      "year": "GitHub project",
+      "status": "Public repository",
+      "featured": false,
+      "visual": "dashboard",
+      "tags": [
+        "React",
+        "FastAPI",
+        "SQLite",
+        "Anomaly detection",
+        "CSV"
+      ],
+      "source": "Public GitHub README",
+      "repository": "https://github.com/Joy-chakraborty-23/battery-health-intelligence-platform",
+      "problem": "Battery telemetry needs interpretable anomaly detection and clear data-quality reporting.",
+      "role": "Created the monitoring dashboard and API workflow described in the repository, with time-series anomaly scoring and model-health reporting.",
+      "method": "CSV readings → FastAPI API → rolling-baseline anomaly checks → SQLite storage → React dashboard and drift summaries.",
+      "outcome": "Code and demo dataset are provided; no live fleet deployment or measured reliability benefit is claimed.",
+      "limitation": "The sample data should not be confused with independent experimental validation.",
+      "future": "Validate anomaly precision and false alarm rates on real sensor faults.",
+      "source_note": "Public GitHub README, October 2026."
+    },
+    {
+      "slug": "image-denoising",
+      "title": "Edge-Preserving Image Denoising",
+      "subtitle": "Deep learning informed by multiscale image representations.",
+      "category": "Computer vision",
+      "year": "2024",
+      "status": "Public implementation",
+      "featured": false,
+      "visual": "vision",
+      "tags": [
+        "CNN",
+        "NSST",
+        "Image processing",
+        "Python"
+      ],
+      "source": "LinkedIn project description; public repository README",
+      "repository": "https://github.com/Joy-chakraborty-23/Edge-preservingand-image-denoising-using-DNCNN",
+      "problem": "Reducing image noise without blurring important edges is difficult for conventional smoothing methods.",
+      "role": "Implemented a workflow combining multiscale shearlet decomposition with CNN-based classification of edge versus noise patches.",
+      "method": "NSST decomposition → patch feature extraction → CNN classification → selective thresholding → image reconstruction.",
+      "outcome": "Repository provides an implementation and example evaluation material; this work reproduces ideas from published literature and is not claimed as a new publication.",
+      "limitation": "Published method authorship belongs to the original research paper; repo-level results should be independently reproduced before comparison claims.",
+      "future": "Evaluate robustness to varied noise distributions and real imagery.",
+      "source_note": "LinkedIn project listing (Sep–Dec 2024); repository credits Shahdoosti & Rahemi (2019)."
+    },
+    {
+      "slug": "forecasting",
+      "title": "Renewable and Load Forecasting Experiments",
+      "subtitle": "Data-driven prediction for energy-system planning.",
+      "category": "AI & machine learning",
+      "year": "Research exploration",
+      "status": "Details being documented",
+      "featured": false,
+      "visual": "forecast",
+      "tags": [
+        "Time-series",
+        "Energy forecasting",
+        "Machine learning"
+      ],
+      "source": "Portfolio brief (topic stated; results not supplied)",
+      "repository": "",
+      "problem": "Power systems benefit from trustworthy forecasts of electricity demand, wind and solar generation.",
+      "role": "Explored load, wind and solar forecasting, as identified in the supplied portfolio brief. A verified technical case study is pending.",
+      "method": "Detailed methodology and benchmark dataset information require an approved project write-up.",
+      "outcome": "Quantitative performance claims intentionally omitted until backed by a citable report or repository.",
+      "limitation": "No validated plots or data tables for this project were supplied with the portfolio materials.",
+      "future": "Add datasets, validation splits, metrics and a comparison of conventional and ML baselines.",
+      "source_note": "Portfolio requirements brief; pending supporting evidence."
+    }
+  ],
+  "education": [
+    {
+      "date": "2025–present",
+      "title": "MS by Research · Energy Sciences and Engineering",
+      "place": "Indian Institute of Technology Guwahati",
+      "detail": "Current CGPA 8.7/10. Research emphasis: battery management, digital twins, state estimation and embedded validation."
+    },
+    {
+      "date": "2019–2023",
+      "title": "B.Tech · Mechanical Engineering",
+      "place": "Tezpur University",
+      "detail": "CGPA 7.33/10. Undergraduate capstone in real-time computer vision and edge computing."
+    }
+  ],
+  "experience": [
+    {
+      "date": "Sep 2025 – May 2026",
+      "title": "Student Coordinator · Center for Career Development",
+      "place": "IIT Guwahati",
+      "detail": "Student coordinator supporting placement-related communication and coordination."
+    }
+  ],
+  "achievements": [
+    {
+      "title": "GATE 2023",
+      "detail": "96.66 percentile, top 3% nationally, as recorded in the supplied CV.",
+      "year": "2023"
+    }
+  ],
+  "certificates": [
+    {
+      "title": "MLOps Tools: MLflow and Hugging Face",
+      "category": "MLOps & machine learning engineering",
+      "issuer": "Duke University-authorized course · Coursera",
+      "date": "29 August 2026",
+      "href": "assets/MLflow_Hugging_Face_Certificate.pdf",
+      "verify": "https://www.coursera.org/verify/62W4A3Z8RY4Y",
+      "id": "62W4A3Z8RY4Y",
+      "thumbnail": "assets/MLflow_Hugging_Face_Certificate-preview.webp"
+    },
+    {
+      "title": "MLOps Platforms: Amazon SageMaker and Azure ML",
+      "category": "MLOps & machine learning engineering",
+      "issuer": "Duke University-authorized course · Coursera",
+      "date": "30 August 2026",
+      "href": "assets/SageMaker_Azure_ML_Certificate.pdf",
+      "verify": "https://www.coursera.org/verify/EW4ZNGOQZGID",
+      "id": "EW4ZNGOQZGID",
+      "thumbnail": "assets/SageMaker_Azure_ML_Certificate-preview.webp"
+    },
+    {
+      "title": "Python Essentials for MLOps",
+      "category": "MLOps & machine learning engineering",
+      "issuer": "Duke University-authorized course · Coursera",
+      "date": "29 August 2026",
+      "href": "assets/Python_Essentials_MLOps_Certificate.pdf",
+      "verify": "https://www.coursera.org/verify/J0HRURYM0XNS",
+      "id": "J0HRURYM0XNS",
+      "thumbnail": "assets/Python_Essentials_MLOps_Certificate-preview.webp"
+    },
+    {
+      "title": "DevOps, DataOps, MLOps",
+      "category": "MLOps & machine learning engineering",
+      "issuer": "Duke University-authorized course · Coursera",
+      "date": "29 August 2026",
+      "href": "assets/DevOps_DataOps_MLOps_Certificate.pdf",
+      "verify": "https://www.coursera.org/verify/LJV42XIGEODT",
+      "id": "LJV42XIGEODT",
+      "thumbnail": "assets/DevOps_DataOps_MLOps_Certificate-preview.webp"
+    },
+    {
+      "title": "Carbon Accounting: GHG Emissions Calculation – Scope 1 & 2",
+      "category": "Carbon accounting & sustainability",
+      "issuer": "Udemy course · Instructor: Yogesh Sharma",
+      "date": "28 August 2026",
+      "duration": "5.5 hours",
+      "href": "assets/GHG_Scope_1_2_Certificate.pdf",
+      "verify": "https://ude.my/UC-15fb7c5c-bddd-4b91-902c-c3cae933fc45",
+      "id": "UC-15fb7c5c-bddd-4b91-902c-c3cae933fc45",
+      "thumbnail": "assets/GHG_Scope_1_2_Certificate-preview.webp"
+    },
+    {
+      "title": "Scope 3 Carbon/GHG Emissions Calculations: Categories 1–15",
+      "category": "Carbon accounting & sustainability",
+      "issuer": "Udemy course · Instructor: Ishan Mehrotra",
+      "date": "28 August 2026",
+      "duration": "3.5 hours",
+      "href": "assets/GHG_Scope_3_Certificate.pdf",
+      "verify": "https://ude.my/UC-8bb01df9-cc6d-4ecb-a180-e240f98cd717",
+      "id": "UC-8bb01df9-cc6d-4ecb-a180-e240f98cd717",
+      "thumbnail": "assets/GHG_Scope_3_Certificate-preview.webp"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Battery & energy systems",
+      "skills": [
+        "BMS",
+        "Lithium-ion modelling",
+        "ECM & thermal models",
+        "Digital twins",
+        "Energy storage"
+      ],
+      "example": "Safety-gated battery digital twin; BatteryWise"
+    },
+    {
+      "name": "Estimation & control",
+      "skills": [
+        "EKF",
+        "SOC estimation",
+        "Residual monitoring",
+        "Safety supervision",
+        "Event triggers"
+      ],
+      "example": "Edge–cloud research architecture"
+    },
+    {
+      "name": "AI & data science",
+      "skills": [
+        "Python",
+        "PyTorch",
+        "TensorFlow",
+        "Scikit-learn",
+        "Time-series analysis"
+      ],
+      "example": "Battery SOC neural models; battery ML monitoring"
+    },
+    {
+      "name": "Hardware & simulation",
+      "skills": [
+        "MATLAB/Simulink",
+        "OPAL-RT",
+        "TI C2000",
+        "Arduino",
+        "Jetson Nano"
+      ],
+      "example": "Simulation and PIL-oriented battery validation; CV capstone"
+    },
+    {
+      "name": "Software engineering",
+      "skills": [
+        "FastAPI",
+        "SQLite",
+        "Node.js",
+        "Electron",
+        "Git"
+      ],
+      "example": "BatteryWise; NEXUS P2P; monitoring platform"
+    }
+  ],
+  "current_work": [
+    {
+      "title": "OPAL-RT / TI C2000 CHIL integration",
+      "tag": "Next validation stage",
+      "description": "Moving from simulation and PIL-oriented development to a physical controller in the OPAL-RT plant loop. Validation will focus on latency, safety responses, balancing and fault scenarios.",
+      "updated": "20 October 2026",
+      "link": "projects/battery-digital-twin.html"
+    },
+    {
+      "title": "Event-trigger and safety-gate analysis",
+      "tag": "Research question",
+      "description": "Investigating when cloud corrections are worth requesting and how to certify that returned information is safe to use.",
+      "updated": "20 October 2026",
+      "link": "research.html"
+    },
+    {
+      "title": "Model reliability beyond training",
+      "tag": "Engineering exploration",
+      "description": "Building monitoring workflows for drift, prediction quality and edge-oriented model deployment in battery applications.",
+      "updated": "20 October 2026",
+      "link": "projects/battery-ml-monitoring.html"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "research_areas": [
+    {
+      "slug": "battery-modeling-digital-twins",
+      "title": "Battery modelling & digital twins",
+      "lede": "Estimating internal battery conditions and designing cloud assistance that does not compromise local safety.",
+      "question": "How should estimators, reduced-order physics and higher-fidelity models cooperate under communication and safety constraints?",
+      "methods": [
+        "4-cell equivalent-circuit and thermal modelling",
+        "EKF-type state estimation and residual monitoring",
+        "Risk-based event requests and correction safety gates"
+      ],
+      "project_slugs": [
+        "battery-digital-twin",
+        "soc-ml",
+        "batterywise"
+      ],
+      "boundary": "The demonstrated communication result is limited to a tested PIL configuration; physical CHIL is not yet complete."
+    },
+    {
+      "slug": "physics-informed-ai",
+      "title": "Physics-informed AI & reliable ML",
+      "lede": "Making learned battery models useful beyond a successful training run.",
+      "question": "How can battery physics, monitoring and model uncertainty support reliable predictions under changing operating conditions?",
+      "methods": [
+        "SOC estimation with FCN, CNN and LSTM models",
+        "Dataset registry, drift checks and model monitoring",
+        "Exploration of physics-informed cloud-level model assistance"
+      ],
+      "project_slugs": [
+        "soc-ml",
+        "battery-ml-monitoring",
+        "battery-health-dashboard"
+      ],
+      "boundary": "Cross-chemistry generalisation and field reliability have not been established by the cited repositories."
+    },
+    {
+      "slug": "control-estimation-embedded",
+      "title": "Control, estimation & embedded validation",
+      "lede": "Moving from simulation and observer logic toward measured real-time behaviour.",
+      "question": "Can edge controllers retain estimation and protection under cloud outages, faults and computational limits?",
+      "methods": [
+        "Residual and uncertainty-aware event triggering",
+        "Safety supervision, balancing and contactor logic",
+        "Embedded-oriented PIL work and planned OPAL-RT / TI C2000 CHIL tests"
+      ],
+      "project_slugs": [
+        "battery-digital-twin",
+        "battery-ml-monitoring",
+        "batterywise"
+      ],
+      "boundary": "Measured physical CHIL latency, robustness margins and formal stability guarantees remain future validation work."
+    },
+    {
+      "slug": "energy-forecasting-optimization",
+      "title": "Energy forecasting & optimization",
+      "lede": "Data-driven forecasting and operational questions for electricity and renewable systems.",
+      "question": "How can forecasting models be evaluated fairly when demand and renewable output vary across time?",
+      "methods": [
+        "Load, solar and wind forecasting interests",
+        "Error metrics and held-out evaluation as methodological priorities",
+        "Optimization interests emerging from energy-systems coursework"
+      ],
+      "project_slugs": [
+        "forecasting"
+      ],
+      "boundary": "A validated standalone report, complete experiment settings and benchmark tables for this topic have not been approved for publication on the portfolio."
+    }
+  ],
+  "featured_case_studies": {
+    "battery-digital-twin": {
+      "objective": "Study whether residual-, uncertainty- and risk-aware cloud requests can reduce data exchange while retaining local estimation and safety responsibility. This is a research objective, not a proven universal theorem.",
+      "dataset": "HPPC-type pulses at 25°C for equivalent-circuit identification; UDDS at 25°C for dynamic evaluation. The supplied report plots current, voltage, cell temperature and reference SOC.",
+      "baseline": "Continuous edge-to-cloud communication, normalized to 100% of its messages in the tested PIL configuration.",
+      "measured": "Communication reduced by approximately 82.8%; the event-triggered condition therefore corresponds to 17.2% of the baseline count (derived, not separately measured).",
+      "limitations": "The report does not give a public trace-level request-count table, confidence interval or experimental repetitions for this figure. The 82.8% result must not be generalized without further tests.",
+      "replication": "A replicator would need the identified four-cell ECM/thermal parameters, drive-cycle input, event-trigger settings, safety-gate thresholds, logging definition and the original execution configuration. Those files are not included with this public website.",
+      "interpretation": "Selective communication was feasible in the reported test without delegating immediate safety responsibility to cloud updates. Communication reduction alone does not establish estimator robustness or safety in all circumstances.",
+      "model": "Vₜ = OCV(SOC, T) − IR₀ − Vₚ; rᵥ(k) = Vmeasured(k) − Vpredicted(k); γₖ ∈ {0,1}. Here γₖ = 1 denotes a cloud request.",
+      "status": "Reported PIL result; physical OPAL-RT / TI C2000 closed-loop CHIL remains planned.",
+      "source": "October 2026 project report, sections 4–6, 14–16 and 23; figures 2–6."
+    },
+    "soc-ml": {
+      "objective": "Compare data-driven SOC estimation methods under a common battery-data processing and evaluation workflow.",
+      "dataset": "LG 18650HG2 battery data; original source: Kollmeyer et al. (2020), Mendeley Data, DOI 10.17632/cp3473x7xv.3.",
+      "baseline": "FCN, CNN and LSTM model families are described as comparators in the repository README; exact split protocol and benchmark numbers need further independent review.",
+      "measured": "The repository documents training, Optuna tuning and MSE/MAE evaluation; no best-performing model or numerical score is asserted in this public case study.",
+      "limitations": "The README alone does not verify out-of-domain evaluation, uncertainty calibration, an embedded deployment or full benchmark reproducibility.",
+      "replication": "Consult the linked repository for scripts and processing steps; check the data license and original Mendeley dataset conditions before reproducing results.",
+      "interpretation": "This project demonstrates a comparative model-development workflow rather than independently verified superiority of one neural architecture.",
+      "model": "Supervised time-series regression using FCN, CNN and LSTM neural architectures for SOC prediction; MSE and MAE are evaluation criteria.",
+      "status": "Public GitHub implementation; results require reproduction before quantitative comparison claims.",
+      "source": "GitHub repository README; Kollmeyer et al., Mendeley Data V3, 2020."
+    },
+    "battery-ml-monitoring": {
+      "objective": "Develop monitoring tools that can detect when deployed battery-health ML models become unreliable as incoming data changes.",
+      "dataset": "Battery telemetry formats, adapted SP20-style inputs and battery-specific example/demo workflows described in the public repository.",
+      "baseline": "A formal controlled comparison against a production monitoring baseline is not documented in the reviewed README.",
+      "measured": "Implemented modules documented: dataset/model registration, multi-model inference, drift/performance monitoring, alerting and deployment-oriented exports. No fleet-performance percentage claimed.",
+      "limitations": "The repository is a production-style prototype; operational effectiveness, field deployment and predictive alert quality need independent tests.",
+      "replication": "The README documents installation and make targets, including bms-demo, dashboard and test. Review environment setup and datasets before relying on example outputs.",
+      "interpretation": "The contribution is an ML lifecycle and monitoring framework for battery use cases, rather than a measured improvement in battery safety.",
+      "model": "Battery dataset registry → model inference → drift and performance checks → monitoring reports / alerting / retraining workflows.",
+      "status": "Public GitHub implementation; production field validation not established.",
+      "source": "Public README of the battery ML monitoring platform (reviewed October 2026)."
+    }
+  }
+}

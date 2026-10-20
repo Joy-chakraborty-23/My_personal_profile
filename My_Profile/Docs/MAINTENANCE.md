@@ -1,0 +1,16 @@
+# Editing guide — minimal coding required
+
+Every edit below happens **locally** to your website files. It does not automatically update a published website; publish the refreshed files afterward.
+
+1. **Change your introduction or current academic status.** Open `data/content.json` with Notepad/VS Code. Under `profile`, edit `summary` and `role`. **Technical name:** *structured content data*. Save; run `python build_site.py`.
+2. **Add a new engineering project.** Inside `data/content.json`, under `projects`, copy an existing project entry. Assign a unique lowercase `slug`, then update the title, category, tags, your personal contribution, implementation status, evidence and limitations. JSON strings need double quotes. **Technical name:** *content-driven static-page generation*. Run `python build_site.py`; the new page is generated under `projects/`.
+3. **Add new research data or edit the evidence ledger.** Open `data/research_content.json`. Update one object under `featured_case_studies` using a verified source. All fields (`baseline`, `dataset`, `measured`, `limitations`, etc.) should remain accurate. **Technical name:** *provenance-aware research metadata*. Rebuild.
+4. **Edit the research-area pages.** Under `research_areas` in `data/research_content.json`, edit a subject, methods and linked project slugs. **Technical name:** *information architecture and taxonomy*. Rebuild.
+5. **Update the two-page research-statement PDF.** Edit the prose in `make_research_summary.py` carefully, then run `python make_research_summary.py`. Keep the online summary in `refinements.py` → `research_statement()` aligned. **Technical name:** *PDF generation and content synchronization*. Both versions need the same scientific status. If a paper or CHIL test becomes completed, document it before changing claims.
+6. **Update CV.** Replace `assets/Jyotirmoy_Chakraborty_Public_CV.pdf` with an updated, selectable-text, privacy-reviewed PDF. **Technical name:** *asset replacement*. Test `python tests/static_audit.py` to catch the original phone and roll identifiers.
+7. **Edit publications.** In `build_site.py`, find `def publications()` and add only sources with verified authors, title, venue, DOI and formal publication status. **Technical name:** *bibliographic provenance*. The default empty peer-reviewed section is deliberate.
+8. **Update the chatbot.** In `assets/app.js`, change or add an object in `FAQs`; include both a correct answer and a local page link. Update `priority` indices if a new entry is appended. **Technical name:** *deterministic FAQ intent matching*. No server or AI key is needed.
+9. **Build and verify.** Run `python build_site.py`, `python tests/static_audit.py`, and (if Chromium and Playwright are installed) `python tests/browser_smoke.py`. **Technical name:** *regression testing* — checking old features still work after edits.
+10. **Publish.** Upload the generated HTML files and assets to the root of the static hosting project. Your current `docs/DEPLOY.md` explains the process. **Technical name:** *static-site deployment*.
+
+Keep **private repository content and unapproved research measurements** out of the public site. Be especially careful not to overwrite 'planned physical CHIL' with 'completed' unless source measurements and approvals are available.
